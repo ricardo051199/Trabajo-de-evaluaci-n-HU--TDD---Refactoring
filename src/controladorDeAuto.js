@@ -1,5 +1,9 @@
 function controladorDeAuto(cadena) {
-  return 'Ingrese una cadena';
+  if (cadena) {
+    let esValidoLaCadena = validarCadena(cadena);
+    if(!esValidoLaCadena) return 'Error entrada.';
+  }
+  else return 'Ingrese una cadena.';
 }
 
 function validarCadena(cadena){

@@ -2,7 +2,10 @@ import {controladorDeAuto, validarCadena} from "./controladorDeAuto";
 
 describe("controlador de auto", () => {
     it("deberia devovler 'ingresa una cadena'", () => {
-        expect(controladorDeAuto('')).toEqual('Ingrese una cadena');
+        expect(controladorDeAuto('')).toEqual('Ingrese una cadena.');
+    });
+    it("deberia devovler 'error entrada'", () => {
+        expect(controladorDeAuto('0,0/0,0aaaa')).toEqual('Error entrada.');
     });
 });
 
