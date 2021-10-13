@@ -43,4 +43,7 @@ describe("devolver posicion inicial", () => {
     it("deberia devovler la posicion inicial de la cadena '0,0/0,0a/aaa'", () => {
         expect(devolvePosicionInicial('0,0/0,0a/aaa')).toEqual([0, 0]);
     });
+    it("deberia devovler la posicion inicial de cualquier cadena", () => {
+        expect(devolvePosicionInicial('100,17/17,1a/aaa')).toEqual([17, 1]);
+    });
 });

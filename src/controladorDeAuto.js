@@ -26,7 +26,10 @@ function devolverArregloDeCoincidencias(cadena){
 }
 
 function devolvePosicionInicial(cadena){
-  return [0, 0];
+  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
+  let x = parseInt(arregloDeCoincidencia[5]);
+  let y = parseInt(arregloDeCoincidencia[7]);
+  return [x,y];
 }
 
 export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial};
