@@ -34,4 +34,7 @@ describe("devolver dimension", () => {
     it("deberia devovler la dimension de la cadena '0,0/0,0a/aaa'", () => {
         expect(devolverDimension('0,0/0,0a/aaa')).toEqual([0, 0]);
     });
+    it("deberia devovler la dimension de cualquier cadena", () => {
+        expect(devolverDimension('100,17/0,0a/aaa')).toEqual([100, 17]);
+    });
 });

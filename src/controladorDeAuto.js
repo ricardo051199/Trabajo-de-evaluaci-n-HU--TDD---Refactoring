@@ -9,13 +9,20 @@ function controladorDeAuto(cadena) {
 }
 
 function validarCadena(cadena){
-  let arregloDeCoincidencia = cadena.match(formato);
+  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
   if(arregloDeCoincidencia) return true;
   else return false;
 }
 
 function devolverDimension(cadena){
-  return [0, 0];
+  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
+    let x = parseInt(arregloDeCoincidencia[1]);
+    let y = parseInt(arregloDeCoincidencia[3]);
+    return [x, y];
+}
+
+function devolverArregloDeCoincidencias(cadena){
+  return cadena.match(formato)
 }
 
 export {controladorDeAuto, validarCadena, devolverDimension};
