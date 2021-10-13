@@ -25,4 +25,8 @@ function devolverArregloDeCoincidencias(cadena){
   return cadena.match(formato)
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension};
+function devolvePosicionInicial(cadena){
+  return [0, 0];
+}
+
+export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial};
