@@ -14,4 +14,8 @@ function validarCadena(cadena){
   else return false;
 }
 
-export {controladorDeAuto, validarCadena};
+function devolverDimension(cadena){
+  return [0, 0];
+}
+
+export {controladorDeAuto, validarCadena, devolverDimension};
