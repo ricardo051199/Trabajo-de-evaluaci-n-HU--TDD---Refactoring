@@ -19,4 +19,13 @@ describe("validar cadena", () => {
     it("deberia devolver false para la cadena '0,0/0,0a/aaa'", () => {
         expect(validarCadena('0,0/0,0aaaa')).toEqual(false);
     });
+    it("deberia devovler false si no se le envia una dimension'", () => {
+        expect(validarCadena('/0,0a/aaa')).toEqual(false);
+    });
+    it("deberia devovler false si no se le envia una posicion inicial", () => {
+        expect(validarCadena('0,0//aaa')).toEqual(false);
+    });
+    it("deberia devovler false si no se le envia una serie de instrucciones", () => {
+        expect(validarCadena('0,0/0,0a/')).toEqual(false);
+    });
 });
