@@ -4,12 +4,7 @@ function controladorDeAuto(cadena) {
   let salida;
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
-    if(esValidoLaCadena){
-        let posicion = devolvePosicionInicial(cadena)
-        let orientacion = devolverOrientacion(cadena);
-        let instrucciones = devolverInstrucciones(cadena)
-        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instrucciones + '\nPosicion final: ' + posicion + " " + orientacion;
-    }else salida = 'Error entrada.';
+    if(!esValidoLaCadena) salida = 'Error entrada.';
   }
   else salida = 'Ingrese una cadena.';
   return salida;
@@ -51,4 +46,10 @@ function devolverInstrucciones(cadena){
   return orientacion;
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones};
+function ejecutarComandos(instruccion){
+  if(instruccion == 'i'){
+    return 'O';
+  }
+}
+
+export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};
