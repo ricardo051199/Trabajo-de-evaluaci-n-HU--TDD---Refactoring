@@ -50,6 +50,9 @@ function ejecutarComandos(instruccion){
   if(instruccion == 'i'){
     return 'O';
   }
+  if(instruccion == 'd'){
+    return 'E';
+  }
 }
 
 export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};

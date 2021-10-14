@@ -70,4 +70,7 @@ describe("ejecutar comandos", () => {
     it("deberia ejecutar una instruccione 'i' con una orientacion hacia el norte", () => {
         expect(ejecutarComandos('i')).toEqual('O');
     });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el norte", () => {
+        expect(ejecutarComandos('d')).toEqual('E');
+    });
 });
