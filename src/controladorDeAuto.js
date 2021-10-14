@@ -38,4 +38,8 @@ function devolverOrientacion(cadena){
   return orientacion;
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion};
+function devolverInstrucciones(cadena){
+  return 'aaa';
+}
+
+export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones};
