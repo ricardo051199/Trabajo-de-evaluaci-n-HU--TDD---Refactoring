@@ -61,4 +61,7 @@ describe("devolver instrucciones", () => {
     it("deberia devovler la instrucciones de la cadena '0,0/0,0a/aaa'", () => {
         expect(devolverInstrucciones('0,0/0,0a/aaa')).toEqual('aaa');
     });
+    it("deberia devovler la instrucciones de cualquier cadena", () => {
+        expect(devolverInstrucciones('100,17/0,0a/abcd')).toEqual('abcd');
+    });
 });
