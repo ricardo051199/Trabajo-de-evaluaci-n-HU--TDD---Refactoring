@@ -33,7 +33,9 @@ function devolvePosicionInicial(cadena){
 }
 
 function devolverOrientacion(cadena){
-  return 'a';
+  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena, formato);
+  let orientacion = arregloDeCoincidencia[8];
+  return orientacion;
 }
 
 export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion};
