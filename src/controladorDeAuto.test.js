@@ -1,4 +1,4 @@
-import {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos} from "./controladorDeAuto";
+import {controladorDeAuto, validarCadena, devolverDimension, devolverPosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos} from "./controladorDeAuto";
 
 describe("controlador de auto", () => {
     it("deberia devovler 'ingresa una cadena'", () => {
@@ -6,6 +6,9 @@ describe("controlador de auto", () => {
     });
     it("deberia devovler 'error entrada'", () => {
         expect(controladorDeAuto('0,0/0,0aaaa')).toEqual('Error entrada.');
+    });
+    it("deberia devovler la posicion inicial, comandos y posicion final de la cadena '0,0/0,0a/aaaa'", () => {
+        expect(controladorDeAuto('0,0/0,0a/aaa')).toEqual('Posicion inicial: 0,0\nComandos: aaa\nPosicion final: 0,0 a');
     });
 });
 
@@ -41,10 +44,10 @@ describe("devolver dimension", () => {
 
 describe("devolver posicion inicial", () => {
     it("deberia devovler la posicion inicial de la cadena '0,0/0,0a/aaa'", () => {
-        expect(devolvePosicionInicial('0,0/0,0a/aaa')).toEqual([0, 0]);
+        expect(devolverPosicionInicial('0,0/0,0a/aaa')).toEqual([0, 0]);
     });
     it("deberia devovler la posicion inicial de cualquier cadena", () => {
-        expect(devolvePosicionInicial('100,17/17,1a/aaa')).toEqual([17, 1]);
+        expect(devolverPosicionInicial('100,17/17,1a/aaa')).toEqual([17, 1]);
     });
 });
 

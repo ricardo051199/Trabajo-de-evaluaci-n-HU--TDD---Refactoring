@@ -4,7 +4,14 @@ function controladorDeAuto(cadena) {
   let salida;
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
-    if(!esValidoLaCadena) salida = 'Error entrada.';
+    if(esValidoLaCadena) {
+      let posicion = devolverPosicionInicial(cadena);
+      let orientacion = devolverOrientacion(cadena);
+      let instruccion = devolverInstrucciones(cadena)
+      let posicionFinal = ejecutarComandos(posicion, orientacion, instruccion)
+      salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instruccion + '\nPosicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1];
+      
+    }else salida = 'Error entrada.';
   }
   else salida = 'Ingrese una cadena.';
   return salida;
@@ -27,7 +34,7 @@ function devolverArregloDeCoincidencias(cadena){
   return cadena.match(formato)
 }
 
-function devolvePosicionInicial(cadena){
+function devolverPosicionInicial(cadena){
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
   let x = parseInt(arregloDeCoincidencia[5]);
   let y = parseInt(arregloDeCoincidencia[7]);
@@ -70,4 +77,4 @@ function ejecutarComandos(posicion, orientacion, instruccion){
   return [posicion, orientacion];
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};
+export {controladorDeAuto, validarCadena, devolverDimension, devolverPosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};
