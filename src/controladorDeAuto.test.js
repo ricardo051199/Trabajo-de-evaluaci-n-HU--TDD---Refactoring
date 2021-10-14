@@ -68,12 +68,15 @@ describe("devolver instrucciones", () => {
 
 describe("ejecutar comandos", () => {
     it("deberia ejecutar una instruccione 'i' con una orientacion hacia el norte", () => {
-        expect(ejecutarComandos([0, 0], 'i')).toEqual([[0, 0], 'O']);
+        expect(ejecutarComandos([0, 0], 'n', 'i')).toEqual([[0, 0], 'O']);
     });
     it("deberia ejecutar una instruccione 'd' con una orientacion hacia el norte", () => {
-        expect(ejecutarComandos([0, 0], 'd')).toEqual([[0, 0], 'E']);
+        expect(ejecutarComandos([0, 0], 'N', 'd')).toEqual([[0, 0], 'E']);
     });
     it("deberia ejecutar una instruccione 'a' con una orientacion hacia el norte", () => {
-        expect(ejecutarComandos([0, 0], 'a')).toEqual([[0,1], '']);
+        expect(ejecutarComandos([0, 0], 'n', 'a')).toEqual([[0,1], 'n']);
+    });
+    it("deberia ejecutar una instruccione 'i' con cualquier orientacion", () => {
+        expect(ejecutarComandos([0, 0], 'O', 'I')).toEqual([[0,0], 'S']);
     });
 });
