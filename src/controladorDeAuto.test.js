@@ -70,19 +70,73 @@ describe("ejecutar comandos", () => {
     it("deberia ejecutar una instruccione 'i' con una orientacion hacia el norte", () => {
         expect(ejecutarComandos([0, 0], 'n', 'i')).toEqual([[0, 0], 'O']);
     });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el norte", () => {
+        expect(ejecutarComandos([0, 0], 'n', 'I')).toEqual([[0, 0], 'O']);
+    });
     it("deberia ejecutar una instruccione 'd' con una orientacion hacia el norte", () => {
         expect(ejecutarComandos([0, 0], 'N', 'd')).toEqual([[0, 0], 'E']);
+    });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el norte", () => {
+        expect(ejecutarComandos([0, 0], 'N', 'D')).toEqual([[0, 0], 'E']);
     });
     it("deberia ejecutar una instruccione 'a' con una orientacion hacia el norte", () => {
         expect(ejecutarComandos([0, 0], 'n', 'a')).toEqual([[0,1], 'n']);
     });
-    it("deberia ejecutar una instruccione 'i' con cualquier orientacion", () => {
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el norte", () => {
+        expect(ejecutarComandos([0, 0], 'n', 'A')).toEqual([[0,1], 'n']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el oeste", () => {
+        expect(ejecutarComandos([0, 0], 'O', 'i')).toEqual([[0,0], 'S']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el oeste", () => {
         expect(ejecutarComandos([0, 0], 'O', 'I')).toEqual([[0,0], 'S']);
     });
-    it("deberia ejecutar una instruccione 'd' con cualquier orientacion", () => {
-        expect(ejecutarComandos([0, 0], 's', 'D')).toEqual([[0,0], 'O']);
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el oeste", () => {
+        expect(ejecutarComandos([0, 0], 'o', 'd')).toEqual([[0,0], 'N']);
     });
-    it("deberia ejecutar una instruccione 'a' con cualquier orientacion", () => {
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el oeste", () => {
+        expect(ejecutarComandos([0, 0], 'o', 'D')).toEqual([[0,0], 'N']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el oeste", () => {
+        expect(ejecutarComandos([0, 0], 'O', 'a')).toEqual([[-1,0], 'O']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el oeste", () => {
+        expect(ejecutarComandos([0, 0], 'O', 'A')).toEqual([[-1,0], 'O']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 's', 'i')).toEqual([[0,0], 'E']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 's', 'I')).toEqual([[0,0], 'E']);
+    });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 's', 'd')).toEqual([[0,0], 'O']);
+    });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 'S', 'D')).toEqual([[0,0], 'O']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 'S', 'a')).toEqual([[0,-1], 'S']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el sur", () => {
+        expect(ejecutarComandos([0, 0], 'S', 'A')).toEqual([[0,-1], 'S']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el este", () => {
+        expect(ejecutarComandos([0, 0], 'e', 'i')).toEqual([[0,0], 'N']);
+    });
+    it("deberia ejecutar una instruccione 'i' con una orientacion hacia el este", () => {
+        expect(ejecutarComandos([0, 0], 'E', 'I')).toEqual([[0,0], 'N']);
+    });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el este", () => {
+        expect(ejecutarComandos([0, 0], 'e', 'd')).toEqual([[0,0], 'S']);
+    });
+    it("deberia ejecutar una instruccione 'd' con una orientacion hacia el este", () => {
+        expect(ejecutarComandos([0, 0], 'E', 'D')).toEqual([[0,0], 'S']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el este", () => {
+        expect(ejecutarComandos([0, 0], 'E', 'a')).toEqual([[1,0], 'E']);
+    });
+    it("deberia ejecutar una instruccione 'a' con una orientacion hacia el este", () => {
         expect(ejecutarComandos([0, 0], 'E', 'A')).toEqual([[1,0], 'E']);
     });
 });
