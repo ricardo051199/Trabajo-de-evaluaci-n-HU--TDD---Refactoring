@@ -2,25 +2,25 @@ import {controladorDeAuto, validarCadena, devolverDimension, devolverPosicionIni
 
 describe("controlador de auto", () => {
     it("deberia devovler 'ingresa una cadena'", () => {
-        expect(controladorDeAuto('')).toEqual('Ingrese una cadena.');
+        expect(controladorDeAuto('')).toEqual(['Ingrese una cadena.', '', '']);
     });
     it("deberia devovler 'error entrada'", () => {
-        expect(controladorDeAuto('0,0/0,0aaaa')).toEqual('Error entrada.');
+        expect(controladorDeAuto('0,0/0,0aaaa')).toEqual(['Error entrada.', '', '']);
     });
     it("deberia devovler la posicion inicial, comandos y posicion final de la cadena '0,0/0,0a/aaaa'", () => {
         expect(controladorDeAuto('0,0/0,0a/aaa')).toEqual(['Posicion inicial: 0,0', 'Comandos: aaa', 'Posicion final: 0,0 a']);
     });
     it("deberia devovler 'el auto se encuentra fuera del rango'", () => {
-        expect(controladorDeAuto('0,0/0,0o/a')).toEqual('El auto se encuentra fuera del rango');
+        expect(controladorDeAuto('0,0/0,0o/a')).toEqual(['El auto se encuentra fuera del rango', '', '']);
     });
     it("deberia devovler 'el auto se encuentra fuera del rango'", () => {
-        expect(controladorDeAuto('0,0/0,0e/a')).toEqual('El auto se encuentra fuera del rango');
+        expect(controladorDeAuto('0,0/0,0e/a')).toEqual(['El auto se encuentra fuera del rango', '', '']);
     });
     it("deberia devovler 'el auto se encuentra fuera del rango'", () => {
-        expect(controladorDeAuto('0,0/0,0n/a')).toEqual('El auto se encuentra fuera del rango');
+        expect(controladorDeAuto('0,0/0,0n/a')).toEqual(['El auto se encuentra fuera del rango', '', '']);
     });
     it("deberia devovler 'el auto se encuentra fuera del rango'", () => {
-        expect(controladorDeAuto('0,0/0,0s/a')).toEqual('El auto se encuentra fuera del rango');
+        expect(controladorDeAuto('0,0/0,0s/a')).toEqual(['El auto se encuentra fuera del rango', '', '']);
     });
 });
 
@@ -153,5 +153,8 @@ describe("ejecutar comandos", () => {
     });
     it("deberia ejecutar una instruccione 'a' con una orientacion hacia el este", () => {
         expect(ejecutarComandos([0, 0], 'E', 'A')).toEqual([[1,0], 'E']);
+    });
+    it("deberia ejecutar mas de una instruccion", () => {
+        expect(ejecutarComandos([0, 0], 'E', 'Aaaa')).toEqual([[4,0], 'E']);
     });
 });
