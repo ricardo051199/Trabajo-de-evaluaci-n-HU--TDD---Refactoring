@@ -1,4 +1,4 @@
-import {controladorDeAuto, validarCadena, devolverDimension, devolverPosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos} from "./controladorDeAuto";
+import {controladorDeAuto, validarCadena, devolverDimension, devolverPosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos, saltar} from "./controladorDeAuto";
 
 describe("controlador de auto", () => {
     it("deberia devovler 'ingresa una cadena'", () => {
@@ -160,5 +160,7 @@ describe("ejecutar comandos", () => {
 });
 
 describe("segunda prueba", () => {
-    
+    it("devolver la posicion despues de ejecutar una instruccion 's'", () => {
+        expect(saltar('n', [0,0])).toEqual([0,2]);
+    });
 });
