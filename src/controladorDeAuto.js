@@ -5,12 +5,14 @@ function controladorDeAuto(cadena) {
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
     if(esValidoLaCadena) {
+      let dimension = devolverDimension(cadena);
       let posicion = devolverPosicionInicial(cadena);
       let orientacion = devolverOrientacion(cadena);
       let instruccion = devolverInstrucciones(cadena)
       let posicionFinal = ejecutarComandos(posicion, orientacion, instruccion)
-      salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instruccion + '\nPosicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1];
-      
+      if(posicionFinal[0] >= [0,0] && posicionFinal[0] <= dimension){
+        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instruccion + '\nPosicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1];
+      }else salida = 'El auto se encuentra fuera del rango';
     }else salida = 'Error entrada.';
   }
   else salida = 'Ingrese una cadena.';
