@@ -1,11 +1,18 @@
 const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
 
 function controladorDeAuto(cadena) {
+  let salida;
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
-    if(!esValidoLaCadena) return 'Error entrada.';
+    if(esValidoLaCadena){
+        let posicion = devolvePosicionInicial(cadena)
+        let orientacion = devolverOrientacion(cadena);
+        let instrucciones = devolverInstrucciones(cadena)
+        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instrucciones + '\nPosicion final: ' + posicion + " " + orientacion;
+    }else salida = 'Error entrada.';
   }
-  else return 'Ingrese una cadena.';
+  else salida = 'Ingrese una cadena.';
+  return salida;
 }
 
 function validarCadena(cadena){
