@@ -8,7 +8,7 @@ describe("controlador de auto", () => {
         expect(controladorDeAuto('0,0/0,0aaaa')).toEqual('Error entrada.');
     });
     it("deberia devovler la posicion inicial, comandos y posicion final de la cadena '0,0/0,0a/aaaa'", () => {
-        expect(controladorDeAuto('0,0/0,0a/aaa')).toEqual('Posicion inicial: 0,0\nComandos: aaa\nPosicion final: 0,0 a');
+        expect(controladorDeAuto('0,0/0,0a/aaa')).toEqual(['Posicion inicial: 0,0', 'Comandos: aaa', 'Posicion final: 0,0 a']);
     });
     it("deberia devovler 'el auto se encuentra fuera del rango'", () => {
         expect(controladorDeAuto('0,0/0,0o/a')).toEqual('El auto se encuentra fuera del rango');

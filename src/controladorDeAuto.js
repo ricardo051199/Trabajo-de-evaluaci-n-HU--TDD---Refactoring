@@ -11,7 +11,7 @@ function controladorDeAuto(cadena) {
       let instruccion = devolverInstrucciones(cadena)
       let posicionFinal = ejecutarComandos(posicion, orientacion, instruccion)
       if(posicionFinal[0] >= [0,0] && posicionFinal[0] <= dimension){
-        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instruccion + '\nPosicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1];
+        salida = ['Posicion inicial: ' + posicion, 'Comandos: ' + instruccion, 'Posicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1]];
       }else salida = 'El auto se encuentra fuera del rango';
     }else salida = 'Error entrada.';
   }
