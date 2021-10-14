@@ -46,13 +46,18 @@ function devolverInstrucciones(cadena){
   return orientacion;
 }
 
-function ejecutarComandos(instruccion){
+function ejecutarComandos(posicion, instruccion){
+  let orientacion = "";
   if(instruccion == 'i'){
-    return 'O';
+    orientacion = 'O';
   }
   if(instruccion == 'd'){
-    return 'E';
+    orientacion = 'E';
   }
+  if(instruccion == 'a'){
+    posicion[1] = posicion[1] + 1;
+  }
+  return [posicion, orientacion];
 }
 
 export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};
