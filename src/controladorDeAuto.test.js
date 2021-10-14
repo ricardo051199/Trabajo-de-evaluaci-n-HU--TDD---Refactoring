@@ -158,3 +158,7 @@ describe("ejecutar comandos", () => {
         expect(ejecutarComandos([0, 0], 'E', 'Aaaa')).toEqual([[4,0], 'E']);
     });
 });
+
+describe("segunda prueba", () => {
+    
+});
