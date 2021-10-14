@@ -1,12 +1,72 @@
 <html>
+  <title>Controlador de auto</title>
+
+  <style>
+
+    body {
+      position: absolute;
+      min-height: 100vh;
+      color: #8d98d3;
+      background-color: #383C54;
+      background-size: cover;
+    }
+
+    .textBox {
+      width: 270px;
+      height: 35px;
+      font-size: 14px;
+      border: 1px solid #8d98d3;
+      background:white;
+      margin-top: 5px;
+      padding-left: 5px;
+      font-family: 'NN' !important;
+      background-repeat: no-repeat;
+      color:8d98d3;
+      border-radius: 10px;
+      text-align: center;
+      margin: 10px 10 10px 20;
+    }
+
+    .items {
+      border-radius: 2px 2px 5px 5px;
+      padding: 20px 20px 20px 20px;
+      width: 90%;
+      max-width: 320px;
+      background: #ffffff;
+      position: relative;
+      padding-bottom: 80px;
+      box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+      top: 150;
+      left: 570;
+    }
+
+    .Ejecutar-btn {
+      font-family: 'NN' !important;
+      border-top: 1px solid #fff;
+      background: rgb(95, 92, 92);
+      margin-top: 10px;
+      width: 270px;
+      height: 35px;
+      border: 0px;
+      font-size: 15px;
+      text-align: center;
+      line-height: 23px;
+      background-color: #8d98d3;
+      color:white;
+      border-radius: 10px;
+      margin: 10px 10 10px 20;
+    }
+
+    </style>
   <body>
-    <h1>Controlador de auto</h1>
-    <form id="controlador-form">
-      <label for="comandos">Comandos:</label>
-      <input type="text" id="comandos" />
-      <input type="submit" value="Ejecutar" />
-    </form>
-    <div id="resultado-div"></div>
+    <div class="items">
+      <h1>Controlador de auto</h1>
+      <form id="controlador-form">
+        <input type="text" class="textBox" placeholder="Comandos...." id="comandos" />
+        <input type="submit" class="Ejecutar-btn" value="Ejecutar" />
+      </form>
+      <div id="resultado-div"></div>
+    </div>
     <script type="module" src="./src/index.js"></script>
   </body>
 </html>
